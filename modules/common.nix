@@ -1,6 +1,9 @@
 { lib, pkgs, ... }:
 {
-  imports = [ ./zsh.nix ];
+  imports = [
+    ./zsh.nix
+    ./tailscale.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
