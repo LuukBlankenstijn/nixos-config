@@ -1,10 +1,14 @@
 { lib, pkgs, ... }:
 {
+  imports = [ ./zsh.nix ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   time.timeZone = "Europe/Amsterdam";
 
   networking.useDHCP = lib.mkDefault true;
+
+  environment.systemPackages = with pkgs; [ git vim ];
 
   users.users.luuk = {
     isNormalUser = true;

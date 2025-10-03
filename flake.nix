@@ -21,6 +21,12 @@
           ./hosts/headscale-box/hardware-configuration.nix
           ./hosts/headscale-box/configuration.nix
         ];
+
+        home-server = mkHost [
+          ./modules/common-server.nix
+          ./hosts/home-server/hardware-configuration.nix
+          ./hosts/home-server/configuration.nix
+        ];
       };
     };
 }
