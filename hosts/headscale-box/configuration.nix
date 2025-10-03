@@ -1,5 +1,10 @@
 { ... }:
 {
+  imports = [
+      ./headscale.nix
+      ./traefik.nix
+  ];
+
   networking.hostName = "headscale-box";
 
   boot.loader.systemd-boot.enable = false;
