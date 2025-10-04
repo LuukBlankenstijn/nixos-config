@@ -11,7 +11,12 @@
 
   networking.useDHCP = lib.mkDefault true;
 
-  environment.systemPackages = with pkgs; [ git vim ];
+  environment.systemPackages = with pkgs; [ 
+    git 
+    vim 
+    bind
+    jq
+  ];
 
   users.users.luuk = {
     isNormalUser = true;
