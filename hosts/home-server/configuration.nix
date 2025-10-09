@@ -1,5 +1,8 @@
 { ... }:
 {
+  imports = [
+      ../../modules/sops-age.nix
+  ];
   networking.hostName = "home-server";
 
   boot.loader.systemd-boot.enable = true;
