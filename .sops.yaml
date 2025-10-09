@@ -1,0 +1,7 @@
+# .sops.yaml
+creation_rules:
+  - path_regex: secrets/.+\.sops\.ya?ml$
+    ssh:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHnm7ME9L/KuEGbSbzPJ4uVgsNl579UCCtXAIlWNYq7x luuk-blankenstijn@luuk-laptop"
+    sage:
+      - "age1jdp4vz3tvvrk8ppdvdp0pr2jh66y99c7gyceer3xslcg0hnsx4mqw2yhpk"
