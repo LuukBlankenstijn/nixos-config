@@ -1,8 +1,5 @@
-{ ... }:
-{
-  imports = [
-      ../../modules/sops-age.nix
-  ];
+{ ... }: {
+  imports = [ ../../modules/sops-age.nix ./k3s.nix ];
   networking.hostName = "home-server";
 
   boot.loader.systemd-boot.enable = true;
