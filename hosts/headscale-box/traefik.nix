@@ -13,6 +13,7 @@
           };
         };
         websecure.address = ":443";
+        hytale-udp.address = ":5520/udp";
       };
 
       api.dashboard = false;
@@ -50,8 +51,20 @@
           { address = "home-server:443"; }
         ];
       };
+
+      udp = {
+        routers.hytale = {
+          entryPoints = [ "hytale-udp" ];
+          service = "hytale";
+        };
+
+        services.hytale.loadBalancer.servers = [
+          { address = "home-server:5520"; }
+        ];
+      };
     };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedUDPPorts = [ 5520 ];
 }
